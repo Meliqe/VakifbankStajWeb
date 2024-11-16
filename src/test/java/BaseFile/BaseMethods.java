@@ -8,11 +8,11 @@ import java.util.List;
 public class BaseMethods {
 
     protected WebDriver driver;
-    private Actions actions;  // Actions nesnesini sınıf seviyesinde tanımlıyoruz
+    private Actions actions;
 
     public BaseMethods() {
         this.driver = DriverManager.getDriver();
-        this.actions = new Actions(driver);  // Actions nesnesi yalnızca bir kez oluşturulur
+        this.actions = new Actions(driver);
     }
 
     public WebElement waitForElement(By locator) {
@@ -20,7 +20,7 @@ public class BaseMethods {
     }
 
     public void hoverElement(By locator) {
-        WebElement element = waitForElement(locator);  // waitUntilVisibleByLocator kullanılıyor
+        WebElement element = waitForElement(locator);
         if (element != null) {
             actions.moveToElement(element).perform();
         }
@@ -28,10 +28,10 @@ public class BaseMethods {
 
     public WebElement findElementHandlingStale(WebElement parent, By childLocator) {
         try {
-            return parent.findElement(childLocator);  // Elementi bulmaya çalışıyoruz
+            return parent.findElement(childLocator);
         } catch (StaleElementReferenceException e) {
             System.out.println("StaleElementReferenceException yakalandı, elementi tekrar bulmaya çalışılıyor...");
-            return waitForElement(childLocator);  // Tekrar dener
+            return waitForElement(childLocator);
         }
     }
 
