@@ -1,0 +1,28 @@
+[
+  {
+    "key":"ELEKTRONIK_MENU",
+    "value": "//span[text()='Elektronik']",
+    "locatorType": "xpath"
+  },
+  {
+    "key":"TELEFON_AKSESUAR_MENU",
+    "value": "//a[contains(text(), 'Telefon & Telefon Aksesuarları')]",
+    "locatorType": "xpath"
+  },
+  {
+    "key":"SAMSUNG_CATEGORY",
+    "value": "//a[contains(@href, '/samsung-android-telefonlar-xc-60005201')]//span[text()='Samsung']",
+    "locatorType": "xpath"
+  },
+  {
+    "key":"URUN_ADI",
+    "value": "//h3[@data-test-id='product-card-name']",
+    "locatorType": "xpath"
+  },
+  {
+    "key":"URUN_FIYATI",
+    "value": "//div[@data-test-id='price-current-price']",
+    "locatorType": "xpath"
+  }
+
+]
