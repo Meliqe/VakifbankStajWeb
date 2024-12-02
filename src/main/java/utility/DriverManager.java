@@ -6,12 +6,15 @@ public class DriverManager {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static void setDriver() {
+        System.out.println("setDriver - Thread ID: " + Thread.currentThread().getId());
+
         driver.set(BrowserManager.createBrowser(Hooks.BROWSERNAME));
     }
     public static WebDriver getDriver() {
-        if (driver.get() == null) {
+        System.out.println("getDriver - Thread ID: " + Thread.currentThread().getId());
+        /*if (driver.get() == null) {
             setDriver();
-        }
+        }*/
         return driver.get();
     }
 
